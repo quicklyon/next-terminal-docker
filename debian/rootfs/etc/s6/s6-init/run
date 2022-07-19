@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# shellcheck disable=SC1091
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+[ -n "${DEBUG:+1}" ] && set -x
+
+# Load libraries
+. /opt/easysoft/scripts/liblog.sh
+. /opt/easysoft/scripts/libfs.sh
+
+# Load environment variables
+. /etc/s6/s6-init/envs
+
+#==================================#
+# Prepare persistence directories. #
+#==================================#
+info "Prepare persistence directories."
