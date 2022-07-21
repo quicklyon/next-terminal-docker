@@ -1,0 +1,78 @@
+version: '3.8'
+services:
+  guacd:
+    image: dushixiang/guacd:latest
+    container_name: guacd
+    environment:
+      GUACD_LOG_LEVEL: debug
+    restart: always
+    volumes:
+      - type: volume
+        source: next-terminal
+        target: /usr/local/next-terminal/data
+    networks:
+      next-terminal:
+        ipv4_address: 172.77.77.10
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_DATABASE: next-terminal
+      MYSQL_USER: next-terminal
+      MYSQL_PASSWORD: next-terminal
+      MYSQL_ROOT_PASSWORD: next-terminal
+    volumes:
+      - mysqldata:/var/lib/mysql
+    restart: always
+    networks:
+      next-terminal:
+        ipv4_address: 172.77.77.11
+
+  debian:
+    image: takeyamajp/debian-sshd
+    container_name: debian
+    environment:
+      ROOT_PASSWORD: "next-terminal"
+    restart: always
+    networks:
+      next-terminal:
+        ipv4_address: 172.77.77.12
+
+  next-terminal:
+    image: dushixiang/next-terminal:latest
+    container_name: next-terminal
+    environment:
+      DB: mysql
+      MYSQL_HOSTNAME: mysql
+      MYSQL_PORT: 3306
+      MYSQL_USERNAME: next-terminal
+      MYSQL_PASSWORD: next-terminal
+      MYSQL_DATABASE: next-terminal
+      GUACD_HOSTNAME: guacd
+      GUACD_PORT: 4822
+    links:
+      - mysql
+      - guacd
+      - debian
+    ports:
+      - "8088:8088"
+    volumes:
+      - type: volume
+        source: next-terminal
+        target: /usr/local/next-terminal/data
+    restart: always
+    networks:
+      next-terminal:
+        ipv4_address: 172.77.77.20
+
+networks:
+  next-terminal:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.77.77.0/24
+
+volumes:
+  next-terminal:
+  mysqldata: 
