@@ -15,7 +15,7 @@ Trademarks: This software listing is packaged by QuickOn. The respective tradema
 
 ## Image Tags
 
-* [`latest`, `1.2.7`, `1.2.7-debian-r0`](https://github.com/quicklyon/debian-docker/blob/1.2.7-debian-r0/Dockerfile)
+* [`latest`, `1.2.7`, `1.2.7-debian-r0`](https://github.com/quicklyon/next-terminal-docker/blob/1.2.7-debian-r0/Dockerfile)
 
 ## TL;DR
 
