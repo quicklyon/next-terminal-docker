@@ -16,6 +16,9 @@ jobs:
       run: |
         TAG=${GITHUB_REF#refs/tags/}
         echo ::set-output name=tag_name::${TAG}
+    - name: Disable Qcloud Mirrors
+      run: |
+        rm -rf debian/prebuildfs/etc/apt/sources.list
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
     - name: Set up Docker Buildx
