@@ -44,9 +44,9 @@ jobs:
           easysoft/next-terminal
           easysoft/next-terminal:1.2.7
           easysoft/next-terminal:${{ steps.prepare.outputs.tag_name }}
-          hub.qucheng.com/library/next-terminal
-          hub.qucheng.com/library/next-terminal:1.2.7
-          hub.qucheng.com/library/next-terminal:${{ steps.prepare.outputs.tag_name }}
+          hub.qucheng.com/app/next-terminal
+          hub.qucheng.com/app/next-terminal:1.2.7
+          hub.qucheng.com/app/next-terminal:${{ steps.prepare.outputs.tag_name }}
     - name: Update repo description
       uses: peter-evans/dockerhub-description@v3
       with:
