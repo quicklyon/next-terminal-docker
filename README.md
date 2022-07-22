@@ -1,12 +1,12 @@
 # NextTerminal&reg; packaged by QuickOn(渠成)
 
+## Image Tags
+
+* [`latest`, `1.2.7`, `1.2.7-debian-r0`](https://github.com/quicklyon/debian-docker/blob/1.2.7-debian-r0/Dockerfile)
+
 ## TL;DR
 
 ```console
-docker run --name nextterminal -d -p 80:80 -p 443:443 quickon/next-terminal
+$ docker run -it easysoft/debian bash
 ```
-
-## supported tags
-
-- [1.2.7](), [1.2.7-debian-r0]()
 

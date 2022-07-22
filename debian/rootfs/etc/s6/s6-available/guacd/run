@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# shellcheck disable=SC1091
+
+[ -n "${EASYSOFT_DEBUG:+1}" ] && set -x
+
+. /opt/easysoft/scripts/liblog.sh
+info "starting guacd ..."
+
+exec /bin/bash /apps/next-terminal/tools/start-guacd.sh

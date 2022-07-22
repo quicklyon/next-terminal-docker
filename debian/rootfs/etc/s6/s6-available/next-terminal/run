@@ -4,4 +4,12 @@
 
 [ -n "${EASYSOFT_DEBUG:+1}" ] && set -x
 
+export SERVER_PORT=${HTTP_PORT:-8088}
+export SERVER_ADDR="0.0.0.0:${SERVER_PORT}"
+export SSHD_PORT=${SSH_PORT:-8089}
+export SSHD_ADDR="0.0.0.0:${SSHD_PORT}"
+
+. /opt/easysoft/scripts/liblog.sh
+info "starting next-terminal ..."
+
 exec /bin/bash /apps/next-terminal/tools/start-next-terminal.sh

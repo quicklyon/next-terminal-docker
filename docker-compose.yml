@@ -1,18 +1,18 @@
 version: '3.8'
 services:
-  guacd:
-    image: dushixiang/guacd:latest
-    container_name: guacd
-    environment:
-      GUACD_LOG_LEVEL: debug
-    restart: always
-    volumes:
-      - type: volume
-        source: next-terminal
-        target: /usr/local/next-terminal/data
-    networks:
-      next-terminal:
-        ipv4_address: 172.77.77.10
+  # guacd:
+  #   image: dushixiang/guacd:latest
+  #   container_name: guacd
+  #   environment:
+  #     GUACD_LOG_LEVEL: debug
+  #   restart: always
+  #   volumes:
+  #     - type: volume
+  #       source: next-terminal
+  #       target: /usr/local/next-terminal/data
+  #   networks:
+  #     next-terminal:
+  #       ipv4_address: 172.77.77.10
 
   mysql:
     image: mysql:8.0
@@ -40,7 +40,7 @@ services:
         ipv4_address: 172.77.77.12
 
   next-terminal:
-    image: dushixiang/next-terminal:latest
+    image: easysoft/next-terminal:latest
     container_name: next-terminal
     environment:
       DB: mysql
@@ -49,7 +49,7 @@ services:
       MYSQL_USERNAME: next-terminal
       MYSQL_PASSWORD: next-terminal
       MYSQL_DATABASE: next-terminal
-      GUACD_HOSTNAME: guacd
+      GUACD_HOSTNAME: 127.0.0.1
       GUACD_PORT: 4822
     links:
       - mysql

@@ -1,3 +1,4 @@
 #!/bin/bash
 
-/usr/local/bin/next-terminal
+cd /usr/local/next-terminal
+./next-terminal
