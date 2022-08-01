@@ -1,0 +1,16 @@
+{
+    "Name": "next-terminal",
+    "Version": "1.2.7",
+    "Home": "https://github.com/dushixiang/next-terminal",
+    "Maintainer": "maintainer qq group 768721743",
+    "GitUrl": "https://github.com/dushixiang/next-terminal",
+    "DockerfileUrl": "https://github.com/quicklyon/next-terminal-docker",
+    "InstallDocUrl": "https://www.qucheng.com/app-install/install-next-terminal-135.html",
+    "Docker": {
+        "Name": "next-terminal",
+        "OS": "debian-11",
+        "ImageOS": "debian:11.4-slim",
+        "Repo": "https://hub.docker.com/r/easysoft/next-terminal",
+        "TagUrl": "https://hub.docker.com/r/easysoft/next-terminal/tags/"
+    }
+}
