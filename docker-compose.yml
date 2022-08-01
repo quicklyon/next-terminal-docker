@@ -27,7 +27,7 @@ services:
         ipv4_address: 172.77.77.12
 
   next-terminal:
-    image: hub.qucheng.com/app/next-terminal:${TAG}
+    image: hub.qucheng.com/app/next-terminal:${TAG:-latest}
     container_name: next-terminal
     environment:
       DB: mysql
