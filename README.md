@@ -1,7 +1,7 @@
 <!-- 该文档是模板生成，手动修改的内容会被覆盖，详情参见：https://github.com/quicklyon/template-toolkit -->
 # QuickOn next-terminal 应用镜像
 
-![GitHub Workflow Status (event)](https://img.shields.io/github/workflow/status/quicklyon/next-terminal-docker/build?style=flat-square)
+[![GitHub Workflow Status](https://github.com/quicklyon/next-terminal-docker/actions/workflows/docker.yml/badge.svg)](https://github.com/quicklyon/next-terminal-docker/actions/workflows/docker.yml)
 ![Docker Pulls](https://img.shields.io/docker/pulls/easysoft/next-terminal?style=flat-square)
 ![Docker Image Size](https://img.shields.io/docker/image-size/easysoft/next-terminal?style=flat-square)
 ![GitHub tag](https://img.shields.io/github/v/tag/quicklyon/next-terminal-docker?style=flat-square)
